@@ -1,0 +1,18 @@
+language: node_js
+
+services:
+  - docker
+
+sudo: false
+
+node_js:
+  - 10
+  - 9
+  - 8
+  - 7
+  - 6
+
+before_install:
+  - docker build -t express-tests .
+  - docker run -d 5000:5000 express-tests
+  - docker ps -a
