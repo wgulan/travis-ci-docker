@@ -14,5 +14,5 @@ node_js:
 
 before_install:
   - docker build -t express-tests .
-  - docker run -d 5000:5000 express-tests
+  - docker run -d -p 5000:5000 express-tests
   - docker ps -a
