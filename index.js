@@ -4,21 +4,23 @@ const app = express();
 const PORT = 5000;
 
 app.get('/', (req, res) => {
-    res.status(200).send('GET');
+    res.status(200).send({result: "GET"});
 });
 
 app.post('/', (req, res) => {
-    res.status(200).send('POST');
+    res.status(200).send({result: "POST"});
 });
 
 app.put('/', (req, res) => {
-    res.status(200).send('PUT');
+    res.status(200).send({result: "PUT"});
 });
 
 app.delete('/', (req, res) => {
-    res.status(200).send('DELETE');
+    res.status(200).send({result: "DELETE"});
 });
 
 app.listen(PORT, () => {
     console.log("Express server running on port ", PORT);
 });
+
+module.exports = app;
