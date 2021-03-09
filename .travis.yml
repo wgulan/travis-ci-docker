@@ -7,10 +7,6 @@ sudo: false
 
 node_js:
   - 10
-  - 9
-  - 8
-  - 7
-  - 6
 
 before_install:
   - docker build -t express-tests .
