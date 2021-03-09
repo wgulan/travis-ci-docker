@@ -40,8 +40,3 @@ describe('Delete Endpoints', () => {
       expect(res.body.result).toEqual("DELETE")
     })
   })
-
-afterAll((done) => {
-    server.close();
-    done();
-});
