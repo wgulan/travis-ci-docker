@@ -1,9 +1,9 @@
 const request = require('supertest')
-const app = require('../index.js')
+const server = require('../index.js')
 
 describe('Get Endpoints', () => {
   it('should return GET', async () => {
-    const res = await request(app)
+    const res = await request(server)
       .get('/')
 
     expect(res.statusCode).toEqual(200)
@@ -13,7 +13,7 @@ describe('Get Endpoints', () => {
 
 describe('Post Endpoints', () => {
     it('should return POST', async () => {
-      const res = await request(app)
+      const res = await request(server)
         .post('/')
   
       expect(res.statusCode).toEqual(200)
@@ -23,7 +23,7 @@ describe('Post Endpoints', () => {
 
 describe('Put Endpoints', () => {
     it('should return PUT', async () => {
-      const res = await request(app)
+      const res = await request(server)
         .put('/')
   
       expect(res.statusCode).toEqual(200)
@@ -33,10 +33,15 @@ describe('Put Endpoints', () => {
 
 describe('Delete Endpoints', () => {
     it('should return DELETE', async () => {
-      const res = await request(app)
+      const res = await request(server)
         .delete('/')
   
       expect(res.statusCode).toEqual(200)
       expect(res.body.result).toEqual("DELETE")
     })
   })
+
+afterAll((done) => {
+    server.close();
+    done();
+});

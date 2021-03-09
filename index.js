@@ -19,8 +19,10 @@ app.delete('/', (req, res) => {
     res.status(200).send({result: "DELETE"});
 });
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
     console.log("Express server running on port ", PORT);
 });
 
-module.exports = app;
+
+
+module.exports = server;
